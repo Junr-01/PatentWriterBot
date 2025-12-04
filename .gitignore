@@ -210,3 +210,4 @@ __marimo__/
 workspace/
 ui/*.png
 ui/*.md
+.DS_Store
