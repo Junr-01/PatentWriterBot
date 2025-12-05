@@ -67,24 +67,39 @@ temp_xxxx/
 
 python 版本3.13+，建议python = 3.13.9。
 
-安装requirements.txt中的包
+安装依赖包
 
 ```
+# 在项目目录（patentwriterBot/）下
+cd patentwriterBot
+
+# 安装依赖包
 pip install requirements.txt
 ```
 
 在.env文件中，必须配置"SERPAPI_API_KEY"，它用于在google patent中搜索专利，获取api[点击这里](https://serpapi.com/manage-api-key)，每月有250个免费使用次数。"DEEPSEEK_API_KEY"和"OPENAI_API_KEY"可在.env文件中配置，也可在ui界面直接输入。
 
 ```
-SERPAPI_API_KEY = "xxxxx"
+# 在项目目录（patentwriterBot/）下
+cd patentwriterBot
 
-DEEPSEEK_API_KEY = "xxxxx"
-OPENAI_API_KEY = "xxxxx"
+# 加入SERPAPI api key
+echo "SERPAPI_API_KEY=....." > .env
+
+# 加入deepseek api key
+echo "DEEPSEEK_API_KEY=....." > .env
+# 加入openai api key
+echo "OPENAI_API_KEY=......" > .env
+
 ```
 
 ### 运行
 
 ```
+# 在项目目录（patentwriterBot/）下
+cd patentwriterBot
+
+#运行
 streamlit run ui/app.py
 ```
 
