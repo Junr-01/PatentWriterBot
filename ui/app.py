@@ -248,7 +248,7 @@ if st.session_state.uploaded_file_name:
                 all_completed = True
                 if current_todos:
                     for status in current_todos.values():
-                        if status.lower() != "completed":
+                        if status.lower() == "pending":
                             all_completed = False
                             break
                 else:
@@ -288,11 +288,12 @@ else:
 with st.sidebar:
     st.header("📋 使用说明")
     st.markdown("""
-    1. **选择模型**: 从下拉框中选择要使用的 AI 模型
-    2. **配置 API Key**: 根据选择的模型输入相应的 API Key
+    1. **选择模型**: 从下拉框中选择要使用的模型
+    2. **配置 API Key**: 根据选择的模型输入相应的API Key
     3. **上传文件**: 上传技术交底书文件（支持word, pdf等）
     4. **生成专利**: 点击"开始生成专利"按钮开始处理
-    
+    5. **停止生成专利**: 点击"停止生成专利"按钮停止处理
+
     ### 支持的模型
     - **deepseek-chat**（默认）
     - **gpt-5**、**gpt-5-mini**
