@@ -92,7 +92,7 @@ streamlit run ui/app.py
 
 ## 🖥️UI界面展示
 
-![image-20251205112657699](/Users/chenjunren/Library/Application Support/typora-user-images/image-20251205112657699.png)
+![image](https://github.com/Junr-01/PatentWriterBot/blob/main/docs/ui.png)
 
 ## 🚀模型运行情况
 
