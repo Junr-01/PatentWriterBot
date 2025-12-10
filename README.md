@@ -63,21 +63,9 @@ temp_xxxx/
 
 ## 🔧快速开始
 
-### 环境配置
+### API配置
 
-python 版本3.13+，建议python = 3.13.9。
-
-安装依赖包
-
-```
-# 在项目目录（patentwriterBot/）下
-cd patentwriterBot
-
-# 安装依赖包
-pip install -r requirements.txt
-```
-
-在.env文件中，必须配置"SERPAPI_API_KEY"，它用于在google patent中搜索专利，获取api[点击这里](https://serpapi.com/manage-api-key)，每月有250个免费使用次数。"DEEPSEEK_API_KEY"和"OPENAI_API_KEY"可在.env文件中配置，也可在ui界面直接输入。
+在.env文件中，**必须**配置"SERPAPI_API_KEY"，它用于在google patent中搜索专利，获取api[点击这里](https://serpapi.com/manage-api-key)，每月有250个免费使用次数。"DEEPSEEK_API_KEY"和"OPENAI_API_KEY"可在.env文件中配置，也可在ui界面直接输入。
 
 ```
 # 在项目目录（patentwriterBot/）下
@@ -93,14 +81,52 @@ echo "OPENAI_API_KEY=......" > .env
 
 ```
 
-### 运行
+
+
+### 直接运行
+
+python 版本3.13+，建议python = 3.13.9。
+
+安装依赖包：
 
 ```
 # 在项目目录（patentwriterBot/）下
 cd patentwriterBot
 
-#运行
+# 安装依赖包
+pip install -r requirements.txt
+```
+
+运行：
+
+```
+# 在项目目录（patentwriterBot/）下运行
 streamlit run ui/app.py
+
+#使用本地浏览器打开 http://localhost:8501/
+```
+
+
+
+### 使用Docker运行
+
+创建镜像：
+
+```
+# 在项目目录（patentwriterBot/）下
+cd patentwriterBot
+
+# 创建镜像
+docker build -t username/imagename .
+```
+
+运行容器：
+
+```
+# 在项目目录（patentwriterBot/）下
+docker run -p 8501:8501 -v ./workspace:/usr/src/PatentWriterBot/workspace --name appname username/imagename
+
+#使用本地浏览器打开 http://localhost:8501/
 ```
 
 
